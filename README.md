@@ -9,9 +9,10 @@ External libraries used:
 - https://github.com/square/picasso
 - https://github.com/hdodenhof/CircleImageView
 
-To get the project running it is necessary to provide some elements that Instagram requires:
+In order to get the project running it is necessary to provide some elements that Instagram requires: 
 - CLIENT_ID
 - CLIENT_SECRET
 - REDIRECT_URI
+Provide this information in the Utils/Constants file.
 
 
