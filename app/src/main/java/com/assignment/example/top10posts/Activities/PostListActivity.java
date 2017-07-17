@@ -11,18 +11,14 @@ import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 
-import com.assignment.example.top10posts.Data.Database;
 import com.assignment.example.top10posts.Fragments.InstagramFragment;
 import com.assignment.example.top10posts.Fragments.PostListFragment;
 import com.assignment.example.top10posts.Instagram.InstagramAPI;
 import com.assignment.example.top10posts.Instagram.InstagramSession;
-import com.assignment.example.top10posts.Instagram.Model.Post;
 import com.assignment.example.top10posts.R;
-import com.assignment.example.top10posts.Utils.Constants;
 import com.assignment.example.top10posts.Utils.Settings;
 import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.android.gms.location.LocationServices;
@@ -43,7 +39,7 @@ public class PostListActivity extends AppCompatActivity implements InstagramFrag
         setSupportActionBar(toolbar);
         ActionBar actionBar = getSupportActionBar();
         if (actionBar != null) {
-            actionBar.setTitle(getString(R.string.posts_activity_tittle));
+            actionBar.setTitle("");
         }
 
         InstagramSession instagramSession = InstagramSession.getInstance(this);
@@ -101,14 +97,14 @@ public class PostListActivity extends AppCompatActivity implements InstagramFrag
             else {
                 if(ActivityCompat.shouldShowRequestPermissionRationale(this, Manifest.permission.ACCESS_FINE_LOCATION)) {
                     new AlertDialog.Builder(this)
-                            .setTitle("Location Access Permission")
-                            .setMessage("The app ask for Instagram post around yor position.")
+                            .setTitle(getString(R.string.location_permission_title))
+                            .setMessage(getString(R.string.location_explain_message))
                             .show();
                 }
                 else {
                     new AlertDialog.Builder(this)
-                            .setTitle("Location Access Permission")
-                            .setMessage("You denied location access, so the app could not get Instagram post around your position.")
+                            .setTitle(getString(R.string.location_permission_title))
+                            .setMessage(getString(R.string.error_location_denied_message))
                             .show();
                 }
             }
@@ -150,6 +146,6 @@ public class PostListActivity extends AppCompatActivity implements InstagramFrag
 
     @Override
     public void onUserAuthorizeFail() {
-        setPostsListScreen();
+        setInstagramLoginScreen();
     }
 }

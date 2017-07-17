@@ -1,6 +1,5 @@
 <resources>
     <string name="app_name">Top10Posts</string>
-    <string name="posts_activity_tittle"></string>
     <string name="settings_activity_tittle">Settings</string>
     <string name="string_post_image">Post image</string>
     <string name="string_user_name">User Name</string>
@@ -8,12 +7,16 @@
     <string name="string_likes">likes</string>
     <string name="string_comments"> comments</string>
     <string name="string_view_all">View all</string>
+    <string name="location_permission_title">Location Access Permission</string>
+    <string name="location_explain_message">The app ask for Instagram post around yor position.</string>
 
-    <!-- -->
+    <!-- Error -->
     <string name="error_getting_access_token">Communication with Instagram failed</string>
     <string name="error_getting_posts">New posts could not be read</string>
     <string name="error_getting_new_posts">New posts not found</string>
     <string name="error_connecting">Connection with server lost</string>
     <string name="error_no_post_because_no_location">New posts can not be read because the location is not available</string>
+    <string name="error_location_denied_message">You denied location access, so the app could not get Instagram post around your position.</string>
+    <string name="error_fragment_callback">must implement Callbacks listener</string>
 
 </resources>

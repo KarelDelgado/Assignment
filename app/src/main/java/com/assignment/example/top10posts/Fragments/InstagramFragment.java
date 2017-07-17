@@ -22,8 +22,6 @@ import com.assignment.example.top10posts.Utils.Messages;
 
 public class InstagramFragment extends Fragment {
 
-    private WebView webView;
-
     private Callbacks listener;
     private InstagramSession instagramSession;
 
@@ -40,9 +38,8 @@ public class InstagramFragment extends Fragment {
         if (context instanceof Callbacks) {
             listener = (Callbacks) context;
         } else {
-            // TODO: Check this
             throw new RuntimeException(context.toString()
-                    + " must implement OnFragmentInteractionListener");
+                    + getString(R.string.error_fragment_callback));
         }
     }
 
@@ -56,8 +53,8 @@ public class InstagramFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.instagram_fragment, container, false);
         CookieManager cookieManager = CookieManager.getInstance();
-        cookieManager.removeAllCookies(null); // TODO: This can't be called all the time
-        webView = (WebView) rootView.findViewById(R.id.instagram_web_view);
+        cookieManager.removeAllCookies(null);
+        WebView webView = (WebView) rootView.findViewById(R.id.instagram_web_view);
         webView.setWebViewClient(new ResponseReader());
         webView.loadUrl(InstagramAPI.getAuthorizeUrl());
         return rootView;

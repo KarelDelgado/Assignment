@@ -82,7 +82,6 @@ public class InstagramAPI {
                         }
                         else {
                             Messages.showToastMessage(context.getString(R.string.error_getting_posts), context);
-                            instagramSession.clearAccessToken();
                         }
                     }
 
