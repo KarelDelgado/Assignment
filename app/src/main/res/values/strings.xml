@@ -12,10 +12,10 @@
 
     <!-- Error -->
     <string name="error_getting_access_token">Communication with Instagram failed</string>
-    <string name="error_getting_posts">New posts could not be read</string>
-    <string name="error_getting_new_posts">New posts not found</string>
+    <string name="error_requesting_posts">Requesting new post failed</string>
+    <string name="error_new_posts_not_found">New posts not found</string>
     <string name="error_connecting">Connection with server lost</string>
-    <string name="error_no_post_because_no_location">New posts can not be read because the location is not available</string>
+    <string name="error_no_post_because_no_location">New posts cannot be read because the user location is not available</string>
     <string name="error_location_denied_message">You denied location access, so the app could not get Instagram post around your position.</string>
     <string name="error_fragment_callback">must implement Callbacks listener</string>
 

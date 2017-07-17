@@ -42,18 +42,18 @@ public class PostListActivity extends AppCompatActivity implements InstagramFrag
             actionBar.setTitle("");
         }
 
-        InstagramSession instagramSession = InstagramSession.getInstance(this);
-        if(!instagramSession.isCodeAvailable()) {
+        checkForLocation();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        if(!InstagramSession.getInstance(this).isCodeAvailable()) {
             setInstagramLoginScreen();
-        }
-        else if(!instagramSession.isAccessTokenAvailable()) {
-            InstagramAPI.requestAccessToken(this);
         }
         else {
             setPostsListScreen();
         }
-
-        checkForLocation();
     }
 
     @Override
@@ -136,7 +136,6 @@ public class PostListActivity extends AppCompatActivity implements InstagramFrag
         getSupportFragmentManager().beginTransaction()
                 .replace(R.id.fragment_container, PostListFragment.newInstance())
                 .commit();
-        InstagramAPI.requestMedia(this);
     }
 
     @Override

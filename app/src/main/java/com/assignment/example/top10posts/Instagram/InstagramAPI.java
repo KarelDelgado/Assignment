@@ -81,7 +81,7 @@ public class InstagramAPI {
                             database.saveInstagramMedia(response.body());
                         }
                         else {
-                            Messages.showToastMessage(context.getString(R.string.error_getting_posts), context);
+                            Messages.showToastMessage(context.getString(R.string.error_requesting_posts), context);
                         }
                     }
 
